@@ -14,7 +14,13 @@
   - name: install nodejs
     ansible.builtin.package:
       name: nodejs
-      state: present
+      state: present 
+
+  - name: ansible to install pyMysql
+    ansible.builtin.pip:
+      name:
+      - PyMYSQL
+      executable: pip3.9    
 
   - name: create expense user
     ansible.builtin.user:
