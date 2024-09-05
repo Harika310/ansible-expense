@@ -3,8 +3,8 @@
   become: yes
   vars:
   - name: ansible to install mysql server
-    ansible.builtin.package: dnf install mysql-server -y
-    - name: mysqld
+    ansible.builtin.package: 
+      name: mysql-server
       status: present
-      
+
   
