@@ -1,5 +1,10 @@
 - name: mysql configuration
   hosts: mysql
   become: yes
-  
+  vars:
+  - name: ansible to install mysql server
+    ansible.builtin.package: dnf install mysql-server -y
+    - name: mysqld
+      status: present
+      
   
