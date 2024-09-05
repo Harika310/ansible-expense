@@ -8,6 +8,6 @@
   - name: ansible to install mysql server
     ansible.builtin.package: 
       name: mysql-server
-      status: present
+      state: present
 
   
