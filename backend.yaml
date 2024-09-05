@@ -16,13 +16,7 @@
       name: nodejs
       state: present 
 
-  - name: ansible to install pyMysql
-    ansible.builtin.pip:
-      name:
-      - PyMYSQL
-      executable: pip3.9    
-
-  - name: create expense user
+     - name: create expense user
     ansible.builtin.user:
       name: expense 
 
@@ -50,6 +44,12 @@
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
+
+  - name: ansible to install pyMysql
+    ansible.builtin.pip:
+      name:
+      - PyMYSQL
+      executable: pip3.9     
 
   - name: import mysql data
     community.mysql.mysql_db:
